@@ -1,0 +1,29 @@
+Assignment 2
+Give brief answers to the questions below: 
+1.	Is it possible to use same meta store by multiple users in case of embedded Hive, if no then why? 
+Ans.  No. multiple user can not access hive when hive has embedded metastore. Embedded metastore only allows one hive session at a time.
+
+2.	What is SerDe in Hive? 
+Ans.   SerDe is the short name for Serializer and Deserializer .Hive uses SerDe  and fileFormat mechanism to read and write data from hive tables.The important concept behind the hive is that it does not own the HDFS file system format that data is stored in .User  are able to write files in to hdfs with whatever tools/mechanism that takes their  ("CREATE EXTERNAL TABLE" or "LOAD DATA INPATH," ) and use Hive to correctly parse that file format in a way that can be used by Hive . SerDe is powerful and customizable mechanism hive uses to parse data  stored in HDFS to be used by the Hive.
+
+3.	What is the functionality of query processor in Apache Hive? 
+Ans.   Query Processor component implements the processing framework for converting SQL to a graph of map/reduce jobs and the execution time framework to run those jobs in the order of dependencies.
+
+4. How can Hive avoid MapReduce? 
+Ans  If we set the property hive.exec.mode.local.auto to true then hive will avoid mapreduce to fetch query results.
+
+5. What are the types of table in Hive? 
+Ans.. There are two types of table in Hive
+1.Managed table..it stores in the default path of hive in hadoop which is /user/hive/warehouse/ 
+2.External table..it stores in external location in hadoop
+
+6. Does Hive support record level insert, delete or update? 
+Ans. No Hive does not support record level insert,delete or update.
+
+7. What are the binary storage formats supported in Hive? 
+Ans. 1.sequence file format  2. RCFile Format 3.ORCFile Format
+
+8. What is the difference between external table and internal table in Hive? 
+Ans. When internal table drops it removes the data also but when external table drops it removes only table definition  data file remains saved so in managed table data and schema both are in under control of hive but in external table only schema is in under control of hive.
+
+
